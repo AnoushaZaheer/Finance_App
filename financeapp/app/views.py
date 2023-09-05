@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .models import *
 # Create your views here.
 def home(request):
-    profile = Profile.objects.filter(user = request.user).first()
+    profile = Profile.objects.filter().first()
     expenses = Expense.objects.filter(user = request.user)
     if request.method=='POST':
         text=request.POST.get('text')
